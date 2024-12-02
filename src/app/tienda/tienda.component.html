@@ -1,0 +1,130 @@
+<html lang="es">
+
+<body>
+    <div class="container-fluid">
+        <div class="row Encabezado barraEncabezado">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+
+                    <h4 class="textoNav tituloTienda">
+                        {{nombrePag}}
+                    </h4>
+
+                    <div class="navbar-nav me-auto">
+                        <a class="nav-link textoNav" href="/tienda">{{tienda}}</a>
+                        <a class="nav-link textoNav" href="/soporte">{{soporte}}</a>
+                        <a class="nav-link textoNav" href="/nosotros">{{acerca}}</a>
+                    </div>
+
+                    <div class="dropdown ms-auto">
+                        <a class="nav-link dropdown-toggle textoNav" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" (click)="toggleDropdown()">
+                            {{USUARIO}}
+                        </a>
+                        <ul id="desplegable" class="dropdown-menu" [class.show]="dropdownVisible">
+                            <li><a class="dropdown-item" href="/usuario">Perfil</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+
+    <div class="container-fluid" style="display: flex; gap: 2%; padding: 4%; background-color: rgb(46, 46, 46);">
+        <!-- Categorías -->
+
+        <div class="categorias" style="flex: 1; background-color: rgb(26, 26, 26); padding: 0.5%;">
+            <h4 class="textoEncabezado" style="font-size: 25px; padding: 15px;">Categorías</h4>
+            <ul style="padding: 5%;" class="lista-hover">
+                <li type="button" class="generos" *ngFor="let genero of generos" [ngClass]="{'hovered': isHovered}"
+                    (mouseenter)="toggleHover()" (mouseleave)="toggleHover()">
+                    {{genero.nombre}}
+                </li>
+            </ul>
+        </div>
+    
+        <!-- Contenido central -->
+        <div class="contenido" style="flex: 6; background-color: rgb(19, 19, 19); padding: 2%;">
+            <!-- Barra de búsqueda -->
+            <div style="display: flex; justify-content: flex-end; margin-bottom: 2%;">
+                <form class="form-inline search-container" style="width: 100%; max-width: 300px;">
+                    <input id="campoBusqueda" name="campoBusqueda" class="form-control mr-sm-2 w-100"
+                        style="height: 30px;" type="search" placeholder="Buscar" aria-label="Buscar"
+                        [(ngModel)]="textoBusqueda" (keyup.enter)="consultar()">
+                    <span class="search-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-search" viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                        </svg>
+                    </span>
+                </form>
+            </div>
+    
+            <!-- Contenido destacado -->
+            <div class="bloqueSeparacion">
+                <span class="textoEncabezado" style="font-size: 25px;">{{destacado}}</span>
+            </div>
+
+            <div class="bloqueSeparacion">
+                <article class="articleDestacado" style="display: flex; gap: 1%;" (click)="redirectWarzone()">
+                    <img src="https://i.ibb.co/wLnMZsH/nuevo-Call-of-Duty.jpg">
+                    <img src="https://i.ibb.co/GdmFfP6/characters-ghost.png">
+                </article>
+            </div>
+ 
+            <!-- Ofertas -->
+            <div class="bloqueSeparacion">
+                <span class="textoEncabezado" style="font-size: 25px;">{{ofertas}}</span>
+                
+            </div>
+
+            <div class="ofentaJuegos bloqueSeparacion">
+                <section class="ofertas" style="padding: 2%;">
+                    <img src="https://i.3djuegos.com/juegos/16932/fotos/ficha/-5203988.webp" (click)="redirectValorant()">
+                    <img src="https://sm.ign.com/ign_es/game/l/league-of-/league-of-legends_q2kj.png" (click)="redirectlol()">
+                    <img src="https://areajugones.sport.es/wp-content/uploads/2019/08/538006-apex-legends-xbox-one-front-cover.jpg" (click)="redirectapex()">
+                    <img src="https://e1.pxfuel.com/desktop-wallpaper/562/703/desktop-wallpaper-playerunknown-s-battlegrounds-font-pubg-lover.jpg" (click)="redirectpubg()">
+                    <img src="https://cdn2.steamgriddb.com/grid/5567cb27a2b348b1ab30a48df1da10b1.png" (click)="redirectdota()">
+                    <img src="https://i.3djuegos.com/juegos/19026/counterstrike_2/fotos/ficha/counterstrike_2-5835304.webp" (click)="redirectcs()">
+                    <img src="https://images.cdn3.buscalibre.com/fit-in/360x360/02/82/02822606205f971d0c987c1483c71efa.jpg" (click)="redirectover()">
+                </section>
+            </div>
+    
+            <!-- Eventos -->
+            <div class="bloqueSeparacion">
+                <span class="textoEncabezado" style="font-size: 25px;">{{eventos}}</span>    
+            </div>
+
+            <div class="bloqueSeparacion">
+                <img class="festi"
+                    src="https://img.freepik.com/vector-gratis/plantilla-banner-contraccion-videojuegos-ocio_23-2149871551.jpg?w=2000">
+            </div>
+    
+            <!-- Juegos gratis -->
+            <div class="bloqueSeparacion">
+                <span class="textoEncabezado" style="font-size: 25px;">{{free}}</span>
+            </div>
+            <div class="bloqueSeparacion">
+                <div style="display: flex; gap: 1%;">
+                    <img class="imagenFree"
+                        src="https://cdn2.unrealengine.com/fortnite-na-central-server-region-3-1920x1080-8e53d35d7d26.jpg"
+                        style="width: 50%;" (click)="redirectfornite()">
+                    <img class="imagenFree" src="https://cdn1.epicgames.com/offer/9773aa1aa54f4f7b80e44bef04986cea/EGS_RocketLeague_PsyonixLLC_S1_2560x1440-80c4a256c751819a0739c0224fa5c15a"
+                        style="width: 50%;" (click)="redirectrocket()">
+                </div>
+            </div>
+        </div>
+    
+        <!-- Espacio adicional derecho -->
+        <div class="extra" style="flex: 1; margin-top: 1%;">
+        </div>
+    </div>
+</body>
+
+</html>

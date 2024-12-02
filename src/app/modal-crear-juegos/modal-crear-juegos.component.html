@@ -1,0 +1,62 @@
+<!-- Modal -->
+<div class="modal fade" tabindex="-1" [ngClass]="{'show': isOpen}" [style.display]="isOpen ? 'block' : 'none'"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Crear Juego</h5>
+                <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="gameForm" (ngSubmit)="onSubmit()">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre del Juego</label>
+                        <input type="text" class="form-control" id="nombre" formControlName="nombre">
+                        <div *ngIf="gameForm.controls['nombre'].invalid && gameForm.controls['nombre'].touched"
+                            class="text-danger">
+                            Este campo es obligatorio
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="descripcion" class="form-label">Descripción</label>
+                        <textarea class="form-control" id="descripcion" formControlName="descripcion"></textarea>
+                        <div *ngIf="gameForm.controls['descripcion'].invalid && gameForm.controls['descripcion'].touched"
+                            class="text-danger">
+                            Este campo es obligatorio
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="portada" class="form-label">Portada</label>
+                        <input type="text" class="form-control" id="portada" formControlName="portada">
+                        <div *ngIf="gameForm.controls['portada'].invalid && gameForm.controls['portada'].touched"
+                            class="text-danger">
+                            Este campo es obligatorio y debe ser una URL válida
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="portada" class="form-label">Link VideoJuego</label>
+                        <input type="text" class="form-control" id="link" formControlName="link">
+                        <div *ngIf="gameForm.controls['link'].invalid && gameForm.controls['link'].touched"
+                            class="text-danger">
+                            Este campo es obligatorio y debe ser una URL válida
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="fecha_lanzamiento" class="form-label">Fecha de Lanzamiento</label>
+                        <input type="date" class="form-control" id="fecha_lanzamiento"
+                            formControlName="fecha_lanzamiento">
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" (click)="close()">Cancelar</button>
+                        <button type="submit" class="btn btn-primary" [disabled]="gameForm.invalid">Crear Juego</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

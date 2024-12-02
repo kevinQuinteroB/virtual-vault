@@ -1,0 +1,94 @@
+<html lang="es">
+
+<body style="background-color: rgb(46, 46, 46); min-height: 100vh; width: auto; overflow-y: auto;">
+    <div class="container-fluid">
+        <div class="row Encabezado barraEncabezado">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+
+                    <h4 class="textoNav tituloTienda">
+                        {{nombrePag}}
+                    </h4>
+
+                    <div class="navbar-nav me-auto">
+                        <a class="nav-link textoNav" href="/tienda">{{tienda}}</a>
+                        <a class="nav-link textoNav" href="/soporte">{{soporte}}</a>
+                        <a class="nav-link textoNav" href="/nosotros">{{acerca}}</a>
+                    </div>
+
+                    <div class="dropdown ms-auto">
+                        <a class="nav-link dropdown-toggle textoNav" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" (click)="toggleDropdown()">
+                            {{USUARIO}}
+                        </a>
+                        <ul id="desplegable" class="dropdown-menu" [class.show]="dropdownVisible">
+                            <li><a class="dropdown-item" href="/usuario">Perfil</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+        <div class="row" style="height: 50px; padding: 4%; ">
+            <div class="col-2" style="margin-top: 1%;">
+                <div class="row" style="padding: 2%; background-color: rgb(26, 26, 26); margin-right: 20%;">
+                    <h4 class="textoEncabezado" style=" font-size: 25px;">Categorias</h4>
+                    <ul style="padding: 5%;" class="lista-hover">
+                        <li type="button" *ngFor="let genero of generos" [ngClass]="{'hovered': isHovered}"
+                            (mouseenter)="toggleHover()" [value]="genero_id" (mouseleave)="toggleHover()">
+                            {{genero.nombre}} </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-8" style="background-color: rgb(19, 19, 19); height: fit-content;">
+                <div class="row" style="margin-top: 2%; margin-bottom: 2%;">
+                    <div class="col-8"></div>
+                    <div class="col-4">
+                        <form class="form-inline my-2 my-lg-0 search-container">
+                            <input id="campoBusqueda" name="campoBusqueda" class="form-control mr-sm-2 w-100"
+                                style="height: 30px;" type="search" placeholder="Buscar" aria-label="Buscar"
+                                [(ngModel)]="textoBusqueda" (keyup.enter)="consultar()">
+                            <span class="search-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-search" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                </svg>
+                            </span>
+                        </form>
+                    </div>
+                </div>
+                <div class="row bloqueSeparacion">
+                    <span class="textoEncabezado" style="font-size: 20px; padding: 1%;">RESULTADO DE LA BUSQUEDA</span>
+                </div>
+                <div class="row">
+                    <ng-container *ngFor="let juego of juegos">
+                        <div class="col-3" style="padding-top: 2%;">
+                            <img class="imagenesJuegos" style="height:15rem; width: 10rem; padding: 1%;"
+                                [src]="juego.portada" (click)="toRedirect(juego)" />
+                        </div>
+                    </ng-container>
+                </div>
+
+                <div class="row bloqueSeparacion" style="height: 2.5rem;">
+                    <span class="textoEncabezado" style="font-size: 25px; padding: 1%;"></span>
+                </div>
+
+            </div>
+
+            <div class="col-2" style="margin-top: 1%;">
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

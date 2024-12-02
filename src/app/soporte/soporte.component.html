@@ -1,0 +1,87 @@
+<html lang="es">
+
+<body>
+    <div class="container-fluid">
+        <div class="row Encabezado barraEncabezado">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+
+                    <h4 class="textoNav tituloTienda">
+                        {{nombrePag}}
+                    </h4>
+
+                    <div class="navbar-nav me-auto">
+                        <a class="nav-link textoNav" href="/tienda">{{tienda}}</a>
+                        <a class="nav-link textoNav" href="/soporte">{{soporte}}</a>
+                        <a class="nav-link textoNav" href="/nosotros">{{acerca}}</a>
+                    </div>
+
+                    <div class="dropdown ms-auto">
+                        <a class="nav-link dropdown-toggle textoNav" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" (click)="toggleDropdown()">
+                            {{USUARIO}}
+                        </a>
+                        <ul id="desplegable" class="dropdown-menu" [class.show]="dropdownVisible">
+                            <li><a class="dropdown-item" href="/usuario">Perfil</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row" style="padding: 8%;">
+        <div class="cms-page-content container">
+            <h1>Soporte</h1>
+            <hr><br>
+            <strong>Virtual Vault, Inc.</strong><br>
+            UIS.<br>
+            BUCARAMANGA, COLOMBIA<br>
+            Telf. +57 888 000 111<br>
+            &nbsp;
+
+            <h2 id="faq">Preguntas frecuentes</h2>
+
+            <hr><br>
+            <strong>¿Podría visitar el estudio?</strong><br>
+            Como política general, no ofrecemos visitas al estudio. Nos comprometemos a ofrecer a nuestro equipo el
+            entorno de trabajo más propicio para que pueda concentrarse y seguir creando grandes juegos y
+            tecnología.<br>
+            <br>
+            <strong>¿Ofrecéis prácticas?</strong><br>
+            Cualquier trabajo de verano o prácticas se publicará en nuestro&nbsp;portal de empleos.<br>
+            <br>
+            <strong>Somos profesionales en música/arte/captura de movimiento/testeo/monetización. ¿Podemos hablar con
+                alguien de Virtual Vault sobre nuestros productos o servicios?</strong><br>
+            Creamos nuestros juegos internamente con la ayuda de trabajadores independientes y equipos con los que hemos
+            establecido relaciones. En este momento no buscamos trabajadores independientes nuevos.<br>
+            <br>
+            <strong>¿Puedo crear una página de aficionados sobre un juego vuestro?</strong><br>
+            ¡Nos encantaría! Lo único que pedimos es que se siga nuestra política de contenido de aficionados.<br>
+            <br>
+            <strong>Tengo una idea muy buena para un juego o para Virtual Vault. ¿Podemos hablar sobre
+                ella?</strong><br>
+            No podemos aceptar propuestas externas de ningún tipo. No nos enviéis ideas, historias, arte, niveles de
+            juego, música, etc. Por motivos legales, no podemos revisarlos.<br>
+            <br>
+            <strong>¿Cómo puedo acceder a vuestros juegos?</strong><br>
+            <a href="/tienda" target="_self">Haz clic aquí</a> para ver dónde puedes descarga.
+            <br><br>
+            <strong>¿Puedo monetizar vídeos de juego que he creado en los que se incluyen juegos vuestros?</strong><br>
+            Sí, está permitido.<br>
+            <br>
+            <strong>¿Puede Virtual Vault patrocinar a mi equipo en un próximo torneo?</strong><br>
+            En este momento no ofrecemos patrocinios para competiciones de juegos ni torneos.<br>
+            <br>
+            <strong>¿FullPlay ofrece becas de escolaridad?</strong><br>
+            En este momento no ofrecemos becas de escolaridad.<br>
+
+        </div>
+    </div>
+</body>
+
+</html>

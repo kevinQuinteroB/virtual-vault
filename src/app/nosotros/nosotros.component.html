@@ -1,0 +1,74 @@
+<html lang="es">
+
+<body>
+    <div class="container-fluid">
+        <div class="row Encabezado barraEncabezado">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+
+                    <h4 class="textoNav tituloTienda">
+                        {{nombrePag}}
+                    </h4>
+
+                    <div class="navbar-nav me-auto">
+                        <a class="nav-link textoNav" href="/tienda">{{tienda}}</a>
+                        <a class="nav-link textoNav" href="/soporte">{{soporte}}</a>
+                        <a class="nav-link textoNav" href="/nosotros">{{acerca}}</a>
+                    </div>
+
+                    <div class="dropdown ms-auto">
+                        <a class="nav-link dropdown-toggle textoNav" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" (click)="toggleDropdown()">
+                            {{USUARIO}}
+                        </a>
+                        <ul id="desplegable" class="dropdown-menu" [class.show]="dropdownVisible">
+                            <li><a class="dropdown-item" href="/usuario">Perfil</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row" style="padding: 8%;">
+        <div class="cms-page-content container">
+            <h1>Acerca de Virtual Vault</h1>
+
+            <hr><br>
+            Virtual Vault es una plataforma global de distribución de videojuegos creada como proyecto por los
+            estudiantes Kevin Quintero y Fernando Montañez para la asignatura de Ingeniería de Sistemas en la
+            Universidad Industrial de Santander (UIS), en Colombia. A pesar de su origen académico, la plataforma ha
+            sido diseñada para ofrecer una experiencia integral en el mundo del entretenimiento digital. Virtual Vault
+            proporciona una vasta biblioteca de juegos, que incluye desde los títulos más populares hasta joyas
+            independientes, brindando a los jugadores una experiencia de compra y juego única.
+
+            Lo que distingue a Virtual Vault es su ecosistema robusto, que incluye características sociales avanzadas,
+            permitiendo a los usuarios conectarse con amigos, unirse a comunidades de jugadores y participar en eventos
+            en línea. Además, la plataforma ofrece recomendaciones personalizadas basadas en las preferencias y el
+            historial de juego de los usuarios, asegurando siempre nuevas experiencias emocionantes.
+
+            Aunque comenzó como un proyecto académico, Virtual Vault ha logrado captar la atención de millones de
+            usuarios registrados y ha facilitado conexiones entre jugadores de todo el mundo. La plataforma también
+            ofrece herramientas y servicios para desarrolladores, ayudándolos a distribuir y gestionar sus juegos de
+            manera eficiente. Con análisis detallados, marketing integrado y soporte técnico, Virtual Vault permite a
+            los desarrolladores alcanzar una audiencia global.
+
+            A través de su compromiso con la innovación y la calidad, Virtual Vault se dedica a ofrecer una experiencia
+            de juego excepcional, tanto para jugadores como para desarrolladores, consolidándose como una plataforma de
+            referencia en la comunidad de videojuegos.
+
+            <h2 style="margin-top: 2%;">Contacto</h2>
+            <strong>Virtual Vault, Inc.</strong><br>
+            UIS.<br>
+            BUCARMANGA, COLOMBIA<br>
+            Telf. +57 888 000 111<br>
+            &nbsp;
+        </div>
+    </div>
+</body>
+
+</html>

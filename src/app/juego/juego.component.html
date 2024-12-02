@@ -1,0 +1,153 @@
+
+<div class="body">
+    <div class="container-fluid">
+        <!-- Barra de navegación -->
+        <div class="row Encabezado barraEncabezado">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <!-- Nombre de la página -->
+                    <a class="navbar-brand">
+                        <h4 class="textoEncabezado tituloTienda">{{nombrePag}}</h4>
+                    </a>
+
+                    <!-- Menú de navegación -->
+                    <div class="collapse navbar-collapse">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link textoNav" href="/tienda">{{tienda}}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link textoNav" href="/soporte">{{soporte}}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link textoNav" href="/nosotros">{{acerca}}</a>
+                            </li>
+                        </ul>
+
+                        <!-- Dropdown de usuario -->
+                        <div class="dropdown ms-auto">
+                            <a class="nav-link dropdown-toggle textoNav" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false" (click)="toggleDropdown()">
+                                {{USUARIO}}
+                            </a>
+                            <ul id="desplegable" class="dropdown-menu" [class.show]="dropdownVisible">
+                                <li><a class="dropdown-item" href="/usuario">perfil</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">cerrar sesión</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="row" style="height: 50px; padding: 4%;">
+            <!-- Columna vacía para espaciar -->
+            <div class="col-2"></div>
+
+            <!-- Contenido central -->
+            <div class="col-8" style="background-color: rgb(19, 19, 19); height: fit-content;">
+                <div class="row" style="margin-top: 2%; margin-bottom: 2%;">
+                    <div class="col-8"></div>
+                    <div class="col-4"></div>
+                </div>
+
+                <div class="row bloqueSeparacion">
+                    <span class="textoEncabezado" style="height: 2.5rem; padding: 1%;"></span>
+                </div>
+
+                <div class="row">
+                    <div class="card mb-3" style="width:max-content; padding: 3%; background-color: transparent;">
+                        <div class="row g-0">
+                            <div class="col-md-5">
+                                <img src="{{portada}}" class="img-fluid rounded-start" alt="..."
+                                    style="height: 25rem; width: auto;">
+                            </div>
+                            <div class="col-md-7">
+                                <div class="card-body" style="color: rgb(255, 255, 255);">
+                                    <h5 class="card-title">{{nombre}}</h5>
+
+                                    <!-- Breadcrumb -->
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <ng-container *ngFor="let genero of generos">
+                                                <li style="font-size: 12px;" class="breadcrumb-item"
+                                                    aria-current="page">{{genero.nombre}}</li>
+                                            </ng-container>
+                                        </ol>
+                                    </nav>
+
+                                    <p class="card-text" style="font-size: 12.5px;">{{descripcion}}</p>
+                                    <p class="card-text" style="margin-top: -5px;">Fecha de lanzamiento:
+                                        {{fecha_lanzamiento | date:'longDate'}}</p>
+                                    <p class="card-text" style="padding-top: -10px;">Desarrollador:
+                                        {{NombreDesarrollador}}</p>
+
+                                    <!-- Botón -->
+                                    <div class="mt-auto">
+                                        <button class="btn btn-secondary w-100 obtenerJuego"
+                                            (click)="irAlLink()">{{juegoObtenido}}</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row bloqueSeparacion" style="height: 2.5rem;">
+                    <span class="textoEncabezado" style="font-size: 25px;"> NOTICIAS </span>
+                </div>
+
+                <div class="Contenedorjuegos">
+                    <ng-container *ngFor="let noticia of noticiasLista">
+                        <div class="juegos">
+                            <h5 class="tituloJuego">{{noticia.fecha_publicacion | date: 'yyyy/MM/dd' }}</h5>
+                            <h5 class="descripcionNoticia">{{noticia.descripcion}}</h5>
+
+                        </div>
+                    </ng-container>
+                </div>
+
+                <!-- Espaciado adicional -->
+                <div class="row bloqueSeparacion" style="height: 2.5rem;">
+                    <span class="textoEncabezado" style="font-size: 25px;"> COMENTARIOS </span>
+                </div>
+
+                <div class="comentarios">
+                    <ng-container *ngIf="this.usuarioRegistrado && this.comentarioInt > 0">
+                        <textarea class="comentario-text" placeholder="comentario" [(ngModel)]="descripcionComentario" (ngModelChange)="actualizarLongitudComentario()"></textarea>
+                        <button type="button" class="btn btn-dark btn-comentario" maxlength="255" (click)="crearCometario()">Enviar Comentario</button>
+                        <p [ngClass]="comentarioLongitud > 255 ? 'text-red' : 'text-green'" >{{comentarioLongitud}} / 255 caracteres</p>
+                    </ng-container>
+
+                    <ng-container *ngIf="!this.usuarioRegistrado || this.comentarioInt <= 0">
+                        <p class="no-registrado">Debes estar registrado para comentar.</p>
+                    </ng-container>
+
+                    <ng-container *ngFor="let comenta of comentarios">
+                        <div class="cometario">
+                            <div class="escrito-comentario">
+                                <div  class="persona">
+                                    <p>{{comenta.usuarioNombre}}</p>
+                                </div>
+                                <div  class="persona">
+                                    <p>{{comenta.fecha | date: 'yyyy/MM/dd'}}</p>
+                                </div>
+                            </div>
+                            <div class="comentario">
+                                <p>{{comenta.descripcion}}</p>
+                            </div>
+                            
+                        </div>                       
+                    </ng-container>
+                </div>
+            </div>
+
+            <!-- Columna vacía para espaciar -->
+            <div class="col-2" style="margin-top: 1%;"></div>
+        </div>
+    </div>
+</div>

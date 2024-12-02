@@ -1,0 +1,41 @@
+/*
+Barra Superior
+*/
+
+.tituloTienda {
+  margin-left: 100px;
+  margin-right: 50px;
+  margin-bottom: 0;
+}
+
+.dropdown-toggle {
+  margin-right: 150px;
+}
+
+.barraEncabezado {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.textoNav:hover {
+  /* Color dorado al iluminar */
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.bloqueSeparacion {
+  background-color: rgb(26, 26, 26);
+  margin-top: 1%;
+  margin-bottom: 1%;
+  border: 1px solid #161616;
+}
+
+.Encabezado {
+  background-color: rgb(0, 0, 0);
+}
+
+.textoNav {
+  color: rgb(128, 128, 128);
+}

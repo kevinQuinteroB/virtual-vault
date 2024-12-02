@@ -1,0 +1,65 @@
+<html lang="es">
+
+<body style="background-color: rgb(255, 255, 255);">
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./tienda">
+                <img src="assets/InicioSesion/carrito-de-compras.png" class="carritoCompras" alt="Carrito de Compras"
+                    style="height: 40px;" />
+            </a>
+            <a class="navbar-brand" href="#" style="color: rgb(186, 186, 186);">{{nombrePag}}</a>
+            <div class="d-flex align-items-center ms-auto">
+                <input class="form-control me-2" type="email" placeholder="{{usuario}}" [(ngModel)]="email"
+                    style="max-width: 200px;">
+                <input class="form-control me-2" type="password" placeholder="{{contrasenatexto}}"
+                    [(ngModel)]="contrasena" style="max-width: 200px;">
+                <button class="btn btn-secondary me-2" type="button" (click)="consulta()">{{ingresar}}</button>
+                <a href="/registro" class="btn btn-secondary me-2">{{Regs}}</a>
+                <a href="/recuperarcontrasena" class="btn btn-link texto-clickeable">{{RC}}</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <img src="assets/InicioSesion/Illustration-web-Grande.png" class="imagenGrande" />
+        </div>
+    </div>
+
+    <!-- Modal de error cuando el usuario ingrese mal las credenciales -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-color: rgb(46, 46, 46);">
+                <div class="modal-header" style="background-color: rgb(46, 46, 46);">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: rgb(255, 255, 255);">Credenciales
+                        incorrectas</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="color: rgb(255, 255, 255); background-color: rgb(46, 46, 46);">
+                    Ha ingresado el correo o la contraseña de forma incorrectas!!
+                </div>
+                <div class="modal-footer" style="background-color: rgb(46, 46, 46);">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <a  href="/registro-desarrollador">
+            <button type="button" class="btn registroDesarrollador">
+                Registrarme como DESARROLLADOR |
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-code"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8z">
+                    </path>
+                </svg>
+                
+            </button>
+        </a>
+    </div>
+</body>
+
+</html>

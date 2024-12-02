@@ -1,0 +1,41 @@
+<!-- Modal -->
+<div class="modal fade" tabindex="-1" [ngClass]="{'show': isOpen}" [style.display]="isOpen ? 'block' : 'none'"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Crear Descripción y Título</h5>
+                <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="descripcionForm" (ngSubmit)="onSubmit()">
+                    <!-- Campo de Título -->
+                    <div class="mb-3">
+                        <label for="titulo" class="form-label">Título</label>
+                        <input type="text" class="form-control" id="titulo" formControlName="titulo">
+                        <div *ngIf="descripcionForm.controls['titulo'].invalid && descripcionForm.controls['titulo'].touched"
+                            class="text-danger">
+                            Este campo es obligatorio
+                        </div>
+                    </div>
+
+                    <!-- Campo de Descripción -->
+                    <div class="mb-3">
+                        <label for="descripcion" class="form-label">Descripción</label>
+                        <textarea class="form-control" id="descripcion" formControlName="descripcion"></textarea>
+                        <div *ngIf="descripcionForm.controls['descripcion'].invalid && descripcionForm.controls['descripcion'].touched"
+                            class="text-danger">
+                            Este campo es obligatorio
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" (click)="close()">Cancelar</button>
+                        <button type="submit" class="btn btn-primary" [disabled]="descripcionForm.invalid">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

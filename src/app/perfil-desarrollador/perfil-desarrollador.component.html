@@ -1,0 +1,114 @@
+<div class="container-fluid">
+    <div class="row Encabezado barraEncabezado">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <h4 class="textoNav tituloTienda">
+                    {{nombrePag}}
+                </h4>
+
+                <div class="dropdown ms-auto">
+                    <a class="nav-link dropdown-toggle textoNav" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false" (click)="toggleDropdown()">
+                        {{nombre}}
+                    </a>
+                    <ul id="desplegable" class="dropdown-menu" [class.show]="dropdownVisible">
+                        <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="container-fluid cuerpo">
+    <div class="bloquePerfil">
+
+        <div class="separador">
+            PERFIL DESARROLLADOR
+        </div>
+
+        <div class="perfil">
+            <img class="fotoPerfil" src="https://cdn.pixabay.com/photo/2024/07/22/17/11/elegance-in-profile-8913207_640.png">
+            <div class="infoUsuario">
+                <div class="NombreUsuario">{{nombre}}</div>
+                <div class="datos">Direccion: {{direccion}}</div>
+                
+                <div class="datos">Fecha de fundacion: {{fundacion}}</div>
+                <div class="datos">Pais: {{NombrePais}}</div>
+                <div class="datos">Contacto: {{email}}</div>
+            </div>
+        </div>
+
+        <div class="separador">
+            Juegos Cargados
+        </div>
+
+        <div class="Contenedorjuegos">
+            <button type="button" class="btn btn-dark" (click)="openCreateGameDialog()">CARGAR NUEVO JUEGO</button>
+            
+            <ng-container *ngFor="let juego of juegos">
+                <div class="juegos">
+                    <h6 class="tituloJuego">{{juego.nombre.toUpperCase()}}</h6>
+                    <div class="botones">
+                        <button type="button" class="btn btn-outline-primary" (click)="consultarNoticiaJuego(juego.id)">Noticias</button>
+                        <button type="button" class="btn btn-outline-secondary" (click)="openCreateNoticaDialog(juego.id)">Agregar Noticia</button>
+                        <button type="button" class="btn btn-outline-danger" (click)="consultarComentariosJuego(juego.id)" >Comentarios</button>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+
+        <div class="separador">
+            Noticias del juego
+        </div>
+
+        <div class="Contenedorjuegos">
+            <ng-container *ngFor="let noticia of noticias">
+                <div class="juegos">
+                    <h5 class="tituloJuego">{{noticia.fecha_publicacion | date: 'yyyy/MM/dd' }}</h5>
+                    <h5 class="descripcionNoticia">{{noticia.descripcion}}</h5>
+                    <div class="botones">
+                        <button type="button" class="btn btn-outline-danger" (click)="eliminarNoticia(noticia.id)">Eliminar</button>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+
+        <div class="separador">
+            Comentarios de mis juegos
+        </div>
+
+        <div class="Contenedorjuegos" style="margin-bottom: 15px;">
+            <ng-container *ngFor="let comenta of comentarios">
+                <div class="cometario">
+                    <div class="escrito-comentario">
+                        <div  class="persona">
+                            <p>{{comenta.usuarioNombre}}</p>
+                        </div>
+                        <div  class="persona">
+                            <p>{{comenta.fecha | date: 'yyyy/MM/dd'}}</p>
+                        </div>
+                    </div>
+                    <div class="comentario">
+                        <p>{{comenta.descripcion}}</p>
+                    </div>
+                </div>                       
+            </ng-container>
+        </div>
+        
+    </div>
+</div>
+
+<app-modal-crear-juegos 
+  [isOpen]="isModalJuegoOpen" 
+  [id]="id"
+  (closeModal)="closeModalJuego($event)" 
+  (submitForm)="enviarFormularioJuego($event)">
+</app-modal-crear-juegos>
+
+<app-modal-noticia
+    [isOpen]="isModalNoticiaOpen"
+    [idJuego] = "juego_id"
+    (closeModal)="closeModalNoticia($event)" 
+    (submitForm)="enviarFormularioNoticia($event)">
+</app-modal-noticia>

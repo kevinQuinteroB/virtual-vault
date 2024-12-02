@@ -1,0 +1,254 @@
+.Encabezado {
+    background-color: rgb(0, 0, 0);
+}
+
+.textoNav:hover {
+    color: #fcfcfc;
+    transition: all 0.5s ease;
+}
+
+.textoNav {
+    color: rgb(128, 128, 128);
+}
+
+
+.barraEncabezado {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.dropdown-toggle {
+    margin-right: 150px;
+}
+
+.tituloTienda {
+    margin-left: 100px;
+    margin-right: 50px;
+    margin-bottom: 0;
+}
+
+/*
+  CUERPO
+  */
+.cuerpo {
+    min-height: 100vh;
+    background-color: rgb(46, 46, 46);
+    display: flex;
+    position: absolute;
+}
+
+.bloquePerfil {
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 700px;
+    background-color: rgb(36, 36, 36);
+    margin-top: 50px;
+    align-items: center;
+}
+
+/*
+    PERFIL
+  */
+
+.perfil {
+    background-color: rgb(24, 24, 24);
+    margin-top: 30px;
+    width: 90%;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+
+}
+
+.fotoPerfil {
+    max-width: 50%;
+    max-height: 313px;
+    min-width: 50%;
+    min-height: 300px;
+}
+
+.infoUsuario {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    padding: 4%;
+    width: 50%;
+    background-color: gray;
+}
+
+.NombreUsuario {
+    font-size: 25px;
+    font-weight: 900;
+    color: rgb(0, 0, 0);
+    letter-spacing: -2px;
+}
+
+.datos {
+    color: rgb(0, 0, 0);
+    letter-spacing: -1px;
+}
+
+.botonEditar {
+    display: flex;
+    position: relative;
+    margin-top: auto;
+    justify-content: center;
+}
+
+.botonEliminar {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin-top: 2px;
+}
+
+
+/*
+  
+  Separador
+
+*/
+
+.separador {
+    background-color: black;
+    margin-top: 30px;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+    color: #fcfcfc;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+/*
+  Lista Juegos
+*/
+
+.Contenedorjuegos{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background-color: rgb(19, 19, 19);
+    margin-top: 30px;
+    width: 90%;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.juegos{
+    margin-top: 10px;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.tituloJuego{
+    width: 35%;
+    position: relative;
+    display: flex;
+    top: 5px;
+    color: #fcfcfc;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.botones{
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.botones button {
+    margin-right: 5px; 
+}
+
+/*
+DESCRIPCION NOTICIA
+*/
+
+.descripcionNoticia {
+    font-size: 17px;
+    max-width: 60%;
+    margin-left: 15px;
+    position: relative;
+    display: flex;
+    top: 5px;
+    color: #fcfcfc;
+    flex-wrap: wrap; /* Asegura que los elementos se envuelvan en caso necesario */
+    word-wrap: break-word; /* Permite que las palabras largas se dividan si es necesario */
+}
+
+
+/*
+ COMENTARIOS
+ */
+
+ .comentarios{
+    height: 100%;
+    display: flex;
+    position: relative;
+    padding-bottom: 15px;
+    flex-direction: column;
+   }
+  
+   .btn-comentario{
+    width: 100%;
+   }
+   .comentario-text{
+    height: 100px;             
+    width: 100%;               
+    margin-bottom: 10px;      
+    overflow-y: hidden;          
+    resize: vertical;          
+    padding: 10px;             
+    background-color: #333;    
+    color: #fff;               
+    border: 1px solid #ccc;    
+    border-radius: 5px;        
+    resize: none; 
+   }
+  
+   .cometario{
+    margin-top: 25px;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+   }
+  
+   .escrito-comentario {
+    text-align: center;
+    justify-content: center;
+    color: #ffffff;
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Alineación vertical */
+    margin-right: 15px;
+    min-width: 117.54px; /* Asegúrate de que el contenedor ocupe todo el ancho disponible */
+  }
+  
+  .persona, .fecha {
+    margin-bottom: 5px; /* Opcional: espacio entre cada línea */
+  }
+  
+  .comentario {
+    flex-grow: 1; /* Hace que el contenido del comentario ocupe el espacio restante */
+    text-align: left; /* Alineación del texto (opcional) */
+    padding: 10px; /* Espacio interno (opcional) */
+    background-color: #333; /* Fondo opcional para el comentario */
+    color: #fff; /* Color del texto */
+    border-radius: 5px; /* Bordes redondeados opcionales */
+    word-wrap: break-word; /* Permite que el texto se ajuste a nuevas líneas cuando se necesite */
+    overflow-wrap: break-word; /* Asegura que el texto largo se divida en la siguiente línea */
+    white-space: normal; /* Asegura que el texto no esté en una sola línea */
+  }

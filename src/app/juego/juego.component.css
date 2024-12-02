@@ -1,0 +1,264 @@
+/* Estilos Generales */
+a {
+  text-decoration: none;
+  color: inherit;
+  outline: none; /* Eliminar el borde en foco */
+}
+
+.body{
+  background-color: rgb(46, 46, 46);
+  min-height: 100vh;
+  width: auto;
+  overflow-y: auto;
+}
+
+.textoEncabezado {
+  color: rgb(186, 186, 186);
+}
+
+/* Entrada personalizada */
+.custom-input,
+.custom-symbol {
+  color: #ccc; /* Color del texto del placeholder y símbolo @ */
+}
+.custom-input::placeholder {
+  color: #ccc; /* Color del texto del placeholder */
+}
+
+/* Estilos de la Barra de Encabezado */
+.barraEncabezado {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.Encabezado {
+  background-color: rgb(0, 0, 0);
+}
+
+/* Estilos de Navegación */
+.textoNav {
+  color: rgb(128, 128, 128);
+}
+
+.textoNav:hover {
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+
+/* Estilos de Separación */
+.bloqueSeparacion {
+  background-color: rgb(26, 26, 26);
+  margin-top: 1%;
+  margin-bottom: 1%;
+  border: 1px solid #161616;
+}
+
+/* Estilos de Dropdown */
+.dropdown-toggle {
+  margin-right: 150px;
+}
+
+/* Contenido del Juego */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.obtenerJuego {
+  display: flex;
+  position: relative;
+  margin: auto 16px 0 16px;
+  margin-bottom: 0;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+/* Efectos de Imágenes de Juegos */
+.imagenesJuegos {
+  transition: all .3s ease;
+}
+
+.imagenesJuegos:hover {
+  transform: scale(110%);
+}
+
+/* Estilo del Título de la Tienda */
+.tituloTienda {
+  margin-left: 100px;
+  margin-right: 50px;
+  margin-bottom: 0;
+}
+
+/* Estilo de la Barra de Búsqueda */
+.search-container {
+  position: relative;
+}
+
+.search-container input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.search-container .search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #6c757d;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Lista con Hover */
+.lista-hover li {
+  color: #ccc;
+  padding-top: 2%;
+}
+
+.lista-hover li:hover {
+  background-color: rgb(186, 186, 186);
+  color: rgb(26, 26, 26);
+}
+
+/* Estilos del Cartel de Recuperación */
+.cartarecuperar {
+  height: 20%;
+  width: 50%;
+  padding-top: 10px;
+  margin-top: 10px;
+  background-color: black;
+  border-radius: 10px;
+}
+ /*
+ COMENTARIOS
+ */
+
+ .comentarios{
+  height: 100%;
+  display: flex;
+  position: relative;
+  padding-bottom: 15px;
+  flex-direction: column;
+ }
+
+ .btn-comentario{
+  width: 100%;
+ }
+ .comentario-text{
+  height: 100px;             
+  width: 100%;               
+  margin-bottom: 10px;      
+  overflow-y: hidden;          
+  resize: vertical;          
+  padding: 10px;             
+  background-color: #333;    
+  color: #fff;               
+  border: 1px solid #ccc;    
+  border-radius: 5px;        
+  resize: none; 
+ }
+
+ .cometario{
+  margin-top: 25px;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+ }
+
+ .escrito-comentario {
+  text-align: center;
+  justify-content: center;
+  color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Alineación vertical */
+  margin-right: 15px;
+  min-width: 117.54px; /* Asegúrate de que el contenedor ocupe todo el ancho disponible */
+}
+
+.persona, .fecha {
+  margin-bottom: 5px; /* Opcional: espacio entre cada línea */
+}
+
+.comentario {
+  flex-grow: 1; /* Hace que el contenido del comentario ocupe el espacio restante */
+  text-align: left; /* Alineación del texto (opcional) */
+  padding: 10px; /* Espacio interno (opcional) */
+  background-color: #333; /* Fondo opcional para el comentario */
+  color: #fff; /* Color del texto */
+  border-radius: 5px; /* Bordes redondeados opcionales */
+  word-wrap: break-word; /* Permite que el texto se ajuste a nuevas líneas cuando se necesite */
+  overflow-wrap: break-word; /* Asegura que el texto largo se divida en la siguiente línea */
+  white-space: normal; /* Asegura que el texto no esté en una sola línea */
+}
+
+.no-registrado{
+  padding-top: 10px;
+  margin-bottom: 0px;
+  text-align: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 15px;
+}
+
+.text-green {
+  color: rgb(155, 155, 155);
+}
+
+.text-red {
+  color: rgb(148, 41, 41);
+}
+
+.Contenedorjuegos{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  
+  margin-top: 5px;
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.juegos{
+  background-color: #333;
+  margin-top: 10px;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.tituloJuego{
+  width: 35%;
+  position: relative;
+  display: flex;
+  top: 5px;
+  color: #fcfcfc;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.descripcionNoticia {
+  font-size: 17px;
+  max-width: 60%;
+  margin-left: 15px;
+  position: relative;
+  display: flex;
+  top: 5px;
+  color: #fcfcfc;
+  flex-wrap: wrap; /* Asegura que los elementos se envuelvan en caso necesario */
+  word-wrap: break-word; /* Permite que las palabras largas se dividan si es necesario */
+}

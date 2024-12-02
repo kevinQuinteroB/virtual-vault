@@ -1,0 +1,188 @@
+/*
+ENCABEZADO
+*/
+
+.Encabezado {
+    background-color: rgb(0, 0, 0);
+  }
+  
+  .textoNav:hover {
+    color: #fcfcfc;
+    transition: all 0.5s ease;
+  }
+  
+  .textoNav {
+    color: rgb(128, 128, 128);
+  }
+  
+  
+  .barraEncabezado {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .dropdown-toggle {
+    margin-right: 150px;
+  }
+  
+  .tituloTienda {
+    margin-left: 100px;
+    margin-right: 50px;
+    margin-bottom: 0;
+  }
+
+
+  /*
+  CUERPO
+  */
+  .cuerpo{
+    min-height: 100vh;
+    background-color: rgb(46, 46, 46);
+    display: flex;
+    position: absolute;
+  }
+
+  .bloquePerfil{
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 700px;
+    background-color: rgb(36, 36, 36);
+    margin-top: 50px;
+    align-items: center;
+  }
+
+  /*
+    PERFIL
+  */
+
+  .perfil{
+    background-color: rgb(24, 24, 24);
+    margin-top: 30px;
+    width: 90%;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+
+  }
+
+  .fotoPerfil{
+   max-width: 50%; 
+   max-height: 313px;
+   min-width: 50%;
+   min-height: 300px;
+  }
+
+  .infoUsuario{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    padding: 4%;
+    width: 50%;
+    background-color: gray;
+  }
+
+  .NombreUsuario{
+    font-size: 25px;
+    font-weight: 900;
+    color: rgb(0, 0, 0);
+    letter-spacing: -2px;
+  }
+
+  .datos{
+    color: rgb(0, 0, 0);
+    letter-spacing: -1px;
+  }
+
+  .botonEditar{
+    display: flex;
+    position: relative;
+    margin-top: auto; 
+    justify-content: center;
+  }
+
+  .botonEliminar{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin-top: 2px;
+  }
+
+
+
+  /*
+  
+  Separador
+
+  */
+
+  .separador{
+    background-color: black;
+    margin-top: 30px;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+    color: #fcfcfc;
+    font-size: 20px;
+    font-weight: 900;
+  }
+
+
+  /*
+  INVENTARIO
+  */
+
+  .inventario{
+    margin-top: 10px;
+    background-color: rgb(24, 24, 24);
+    width: 90%;
+  }
+
+  /*
+  Lista Juegos
+*/
+
+.Contenedorjuegos{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background-color: rgb(19, 19, 19);
+  margin-top: 30px;
+  width: 90%;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.juegos{
+  margin-top: 10px;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.tituloJuego{
+  position: relative;
+  display: flex;
+  top: 5px;
+  color: #fcfcfc;
+}
+
+.botones{
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.botones button {
+  margin-right: 5px; 
+}
