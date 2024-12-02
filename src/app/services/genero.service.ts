@@ -14,7 +14,7 @@ export class GeneroService {
   constructor(private httpClient : HttpClient) { }
 
   obtenerGeneros():Observable<Genero[]>{
-    return this.httpClient.get<Genero[]>(`${this.baseURL}/all`);
+    return this.httpClient.get<Genero[]>(`${this.baseURL}/all`, { withCredentials: true });
   }
 
 

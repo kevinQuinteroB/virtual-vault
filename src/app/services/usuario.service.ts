@@ -13,11 +13,11 @@ export class UsuarioService {
   constructor(private httpClient: HttpClient) {}
 
   registrarUsuario(usuario: any): Observable<any> {
-    return this.httpClient.post(`${this.baseURL}/register`, usuario);
+    return this.httpClient.post(`${this.baseURL}/register`, usuario, { withCredentials: true });
   }
 
   consultarUsuario(email: string, contrasena: string): Observable<Usuario> {
-    return this.httpClient.get<Usuario>(`${this.baseURL}/login/${email}/${contrasena}`)
+    return this.httpClient.get<Usuario>(`${this.baseURL}/login/${email}/${contrasena}`, { withCredentials: true })
       .pipe(
         tap(usuario => {
           console.log('Usuario Antes de registrar:', this.getUsuarioRegistrado());
