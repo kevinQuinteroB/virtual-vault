@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class GeneroService {
 
-  private baseURL = "https://backendvirtualvaultproyect-1.onrender.com/generos";
+  private baseURL = "https://backendvirtualvaultproyect.onrender.com/generos";
 
 
   constructor(private httpClient : HttpClient) { }
