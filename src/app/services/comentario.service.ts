@@ -8,7 +8,7 @@ import { Comentario } from '../models/comentario';
 })
 export class ComentarioService {
 
-  private baseURL = "http://localhost:8080/comentarios";
+  private baseURL = "https://backendvirtualvaultproyect.onrender.com/comentarios";
 
   constructor(private httpClient: HttpClient) { }
 
